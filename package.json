@@ -1,0 +1,53 @@
+{
+	"private": true,
+	"name": "pp-origin",
+	"version": "0.1.0",
+	"type": "module",
+	"description": "A test Privacy Pass origin",
+	"main": "dist/worker.js",
+	"author": "Chris Wood <chriswood@cloudflare.com>",
+	"contributors": [
+		"Armando Faz <armfazh@cloudflare.com>",
+		"Cefan Rubin <cefan@cloudflare.com>",
+		"Chris Wood <chriswood@cloudflare.com>",
+		"Thibault Meunier <thibault@cloudflare.com>"
+	],
+	"license": "Apache-2.0",
+	"homepage": "https://github.com/cloudflare/pp-origin#readme",
+	"repository": "github:cloudflare/pp-origin",
+	"scripts": {
+		"build": "tsc && node scripts/cli.js build",
+		"deploy:production": "wrangler publish --no-bundle --env production",
+		"dev": "wrangler dev --env dev --local",
+		"format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}'",
+		"lint": "eslint src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}'"
+	},
+	"eslintConfig": {
+		"parserOptions": {
+			"ecmaVersion": 2020,
+			"sourceType": "module"
+		},
+		"root": true,
+		"extends": [
+			"typescript",
+			"prettier"
+		]
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20230904.0",
+		"dotenv": "16.3.1",
+		"esbuild": "^0.19.2",
+		"eslint": "8.50.0",
+		"eslint-config-prettier": "9.0.0",
+		"eslint-config-typescript": "^3.0.0",
+		"git-rev-sync": "^3.0.2",
+		"prettier": "3.0.3",
+		"sade": "^1.8.1",
+		"wrangler": "^3.1.0"
+	},
+	"dependencies": {
+		"@cloudflare/privacypass-ts": "^0.4.0",
+		"@sentry/cli": "^2.20.6",
+		"typescript": "^5.2.2"
+	}
+}
