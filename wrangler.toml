@@ -1,0 +1,20 @@
+main = "./dist/worker.mjs"
+compatibility_date = "2022-04-12"
+workers_dev = false # Enable it for development purposes, and if you are want a domain ending with .workers.dev
+account_id = "your-account-id-here" # Log in dash.cloudflare.com, select an account, go to Workers, and copy Account ID
+
+[build]
+command = 'npm install && npm run build'
+
+[env.production]
+name = "pp-origin"
+route = { pattern = "pp-origin.example.test", custom_domain=true }
+# If you deploy an issuer yourself that uses Cloudflare Workers, you need to use Service Bindings for the attester to reach to this issuer
+# This is the case for instance if you deploy cloudfare/pp-issuer with cloudflare/pp-attester
+# services = [
+#   { binding = "ISSUER", service = "pp-issuer-production", environment = "production" }
+# ]
+
+[env.production.vars]
+ISSUER_NAME = "pp-issuer-public.research.cloudflare.com" # Use Cloudflare Research Public Issuer. This is only meant for experiments, AND SHOULD NOT BE USED ON A PRODUCTION SERVICE
+ORIGIN_NAME = "pp-origin.example.test"
