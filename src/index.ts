@@ -1,5 +1,6 @@
 import {
 	IssuerConfig,
+	PRIVATE_TOKEN_ISSUER_DIRECTORY,
 	PrivateToken,
 	TOKEN_TYPES,
 	Token,
@@ -43,7 +44,7 @@ async function fetchBasicIssuerKeys(env: Bindings, issuerName: string) {
 			'content-type': 'application/json',
 		},
 	};
-	const configURL = `${issuerURL}/.well-known/token-issuer-directory`;
+	const configURL = `${issuerURL}${PRIVATE_TOKEN_ISSUER_DIRECTORY}`;
 	const configResponse = await generateFetchIssuerEndpoint(env)(configURL, init);
 	const config: IssuerConfig = await configResponse.json();
 
