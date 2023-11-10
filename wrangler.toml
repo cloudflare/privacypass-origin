@@ -16,5 +16,5 @@ route = { pattern = "pp-origin.example.test", custom_domain=true }
 # ]
 
 [env.production.vars]
-ISSUER_NAME = "pp-issuer-public.research.cloudflare.com" # Use Cloudflare Research Public Issuer. This is only meant for experiments, AND SHOULD NOT BE USED ON A PRODUCTION SERVICE
+ISSUER_URL = "https://pp-issuer-public.research.cloudflare.com" # Use Cloudflare Research Public Issuer. This is only meant for experiments, AND SHOULD NOT BE USED ON A PRODUCTION SERVICE
 ORIGIN_NAME = "pp-origin.example.test"
