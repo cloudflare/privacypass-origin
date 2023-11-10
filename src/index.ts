@@ -32,12 +32,10 @@ function generateFetchIssuerEndpoint(
 
 /**
  * Fetch public keys and identifiers from the designated Privacy Pass issuer service.
- * @param {String} issuerName
+ * @param {String} issuerURL
  * @returns a list with three ArrayBuffer elements
  */
-async function fetchBasicIssuerKeys(env: Bindings, issuerName: string) {
-	const issuerURL = `https://${issuerName}`;
-
+async function fetchBasicIssuerKeys(env: Bindings, issuerURL: string) {
 	// Fetch the issuer configuration
 	const init = {
 		headers: {
@@ -64,7 +62,7 @@ async function fetchBasicIssuerKeys(env: Bindings, issuerName: string) {
 
 async function issuerKeys(env: Bindings): Promise<[CryptoKey, Uint8Array]> {
 	// Fetch issuer keys
-	const clientRequestKeyEnc = await fetchBasicIssuerKeys(env, env.ISSUER_NAME);
+	const clientRequestKeyEnc = await fetchBasicIssuerKeys(env, env.ISSUER_URL);
 	const spkiEnc = util.convertRSASSAPSSToEnc(clientRequestKeyEnc);
 	// Import the public key that we'll use for verification
 	const tokenKey = await crypto.subtle.importKey(
@@ -92,7 +90,8 @@ async function handleLogin(request: Request, env: Bindings) {
 
 	const fixedRedemptionContext = new Uint8Array(32);
 	fixedRedemptionContext.fill(0xfe);
-	const challenge = new TokenChallenge(tokenType.value, env.ISSUER_NAME, fixedRedemptionContext, [
+	const issuerName = new URL(env.ISSUER_URL).host
+	const challenge = new TokenChallenge(tokenType.value, issuerName, fixedRedemptionContext, [
 		env.ORIGIN_NAME,
 	]);
 	const privateToken = new PrivateToken(challenge, clientRequestKeyEnc, 10);
