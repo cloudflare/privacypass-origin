@@ -130,7 +130,8 @@ export default (_env: Bindings) => `<!DOCTYPE html>
   This origin response contains a <a class="q" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate">WWW-Authenticate</a> HTTP header with a
   <a class="q" target="_blank" href="https://www.ietf.org/archive/id/draft-ietf-privacypass-auth-scheme-01.html">PrivateToken</a> challenge. <br><br>
   Browsers that support this authentication method may respond with a <a class="q" target="_blank" href="https://blog.cloudflare.com/eliminating-captchas-on-iphones-and-macs-using-new-standard/">Privacy Pass Token</a> to authenticate. <br><br>  
-  The <a href="https://chrome.google.com/webstore/detail/privacy-pass/ajhmfdgkijocedmfjonnpjfojldioehi">Privacy Pass extension</a> adds Privacy Pass support to your browser that opens an <a class="q" target="_blank" href="https://www.ietf.org/archive/id/draft-ietf-privacypass-architecture-09.html#name-attester-role">Attester</a> to issue a challenge.
+  The <a href="https://chrome.google.com/webstore/detail/privacy-pass/ajhmfdgkijocedmfjonnpjfojldioehi">Silk - Privacy Pass Client extension</a> adds Privacy Pass support to your browser that opens an <a class="q" target="_blank" href="https://www.ietf.org/archive/id/draft-ietf-privacypass-architecture-16.html#name-attester-role">Attester</a> to issue a challenge. <br><br>
+  You can learn more about how it works on <a href="https://blog.cloudflare.com/privacy-pass-standard">Cloudflare Blog</a>.
 </main>
 
 
