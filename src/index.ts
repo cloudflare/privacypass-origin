@@ -90,7 +90,7 @@ async function handleLogin(request: Request, env: Bindings) {
 
 	const fixedRedemptionContext = new Uint8Array(32);
 	fixedRedemptionContext.fill(0xfe);
-	const issuerName = new URL(env.ISSUER_URL).host
+	const issuerName = new URL(env.ISSUER_URL).host;
 	const challenge = new TokenChallenge(tokenType.value, issuerName, fixedRedemptionContext, [
 		env.ORIGIN_NAME,
 	]);
