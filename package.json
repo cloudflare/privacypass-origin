@@ -19,8 +19,8 @@
 		"build": "tsc && node scripts/cli.js build",
 		"deploy:production": "wrangler publish --no-bundle --env production",
 		"dev": "wrangler dev --env production",
-		"format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}'",
-		"lint": "eslint src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}'"
+		"format": "prettier --write  '*.{json,js}' 'scripts/*.{js,ts}' 'src/**/*.{js,ts}'",
+		"lint": "eslint src && prettier --check '*.{json,js}' 'scripts/*.{js,ts}' 'src/**/*.{js,ts}'"
 	},
 	"eslintConfig": {
 		"parserOptions": {
