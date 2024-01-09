@@ -53,7 +53,7 @@ export async function buildCmd(opts) {
 		const cli = new Sentry(undefined, {
 			authToken: process.env.SENTRY_API_TOKEN,
 			org: process.env.SENTRY_ORG ?? 'cloudflare',
-			project: process.env.SENTRY_PROJECT ?? 'pp-origin',
+			project: process.env.SENTRY_PROJECT ?? 'privacy-pass-origin',
 			dist: git.short(__dirname),
 			url: process.env.SENTRY_URL ?? 'https://sentry.io/',
 			headers,
