@@ -1,6 +1,6 @@
 # pp-origin
 
-This Worker implements the [challenge](https://ietf-wg-privacypass.github.io/base-drafts/draft-ietf-privacypass-auth-scheme.html#name-token-challenge) and [redemption](https://ietf-wg-privacypass.github.io/base-drafts/draft-ietf-privacypass-auth-scheme.html#name-token-redemption) protocols in Privacy Pass. A live demonstration of this worker can be found [here](https://pat-origin.crypto-team.workers.dev/). 
+This Worker implements the [challenge](https://ietf-wg-privacypass.github.io/base-drafts/draft-ietf-privacypass-auth-scheme.html#name-token-challenge) and [redemption](https://ietf-wg-privacypass.github.io/base-drafts/draft-ietf-privacypass-auth-scheme.html#name-token-redemption) protocols in Privacy Pass. A live demonstration of this worker can be found [here](https://demo-pat.research.cloudflare.com/login). 
 
 ## Overview
 
