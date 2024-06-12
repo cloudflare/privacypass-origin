@@ -1,6 +1,6 @@
 {
 	"private": true,
-	"name": "pp-origin",
+	"name": "privacypass-origin",
 	"version": "0.1.0",
 	"type": "module",
 	"description": "A test Privacy Pass origin",
@@ -13,8 +13,8 @@
 		"Thibault Meunier <thibault@cloudflare.com>"
 	],
 	"license": "Apache-2.0",
-	"homepage": "https://github.com/cloudflare/pp-origin#readme",
-	"repository": "github:cloudflare/pp-origin",
+	"homepage": "https://github.com/cloudflare/privacypass-origin#readme",
+	"repository": "github:cloudflare/privacypass-origin",
 	"scripts": {
 		"build": "tsc && node scripts/cli.js build",
 		"deploy:production": "wrangler publish --no-bundle --env production",
