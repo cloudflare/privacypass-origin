@@ -12,7 +12,7 @@ function ctEqual(a: Uint8Array, b: Uint8Array): boolean {
 
 export function base64UrlToUint8Array(base64Url: string): Uint8Array {
 	// Convert URL escaped characters to regular base64 string
-	const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+	const base64 = base64Url.replace(/^"/, '').replace(/"$/, '').replace(/-/g, '+').replace(/_/g, '/');
 
 	return Uint8Array.from(atob(base64), c => c.charCodeAt(0));
 }
