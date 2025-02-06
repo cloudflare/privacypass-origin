@@ -56,6 +56,7 @@ export async function verifyToken(authenticator: string, tokenKey: CryptoKey, co
 			signatureInput
 		);
 	} catch (err) {
+		console.log("Token verification failed", err)
 		return false;
 	}
 }
