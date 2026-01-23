@@ -1,12 +1,12 @@
 # privacypass-origin
 
-This Worker implements the [challenge](https://ietf-wg-privacypass.github.io/base-drafts/draft-ietf-privacypass-auth-scheme.html#name-token-challenge) and [redemption](https://ietf-wg-privacypass.github.io/base-drafts/draft-ietf-privacypass-auth-scheme.html#name-token-redemption) protocols in Privacy Pass. A live demonstration of this worker can be found [here](https://demo-pat.research.cloudflare.com/login). 
+This Worker implements the [challenge](https://www.rfc-editor.org/rfc/rfc9577.html#name-token-challenge) and [redemption](https://www.rfc-editor.org/rfc/rfc9577.html#name-token-redemption) protocols in Privacy Pass. A live demonstration of this worker can be found [here](https://demo-pat.research.cloudflare.com/login). 
 
 ## Overview
 
 The test server has two HTTP endpoints:
 
-- `GET /login`: This API will return a static HTML page representing the application, which is a simple (and non-functional) login form. It also returns a `WWW-Authenticate: PrivateToken` challenge as defined by [Privacy Pass authentication](https://datatracker.ietf.org/doc/draft-ietf-privacypass-auth-scheme/).
+- `GET /login`: This API will return a static HTML page representing the application, which is a simple (and non-functional) login form. It also returns a `WWW-Authenticate: PrivateToken` challenge as defined by [Privacy Pass authentication](https://www.rfc-editor.org/rfc/rfc9577.html).
 - `GET /login (+Authorization: PrivateToken)`: This API is used by the application for performing a "login" request. Clients will interact with this API upon submitting the login form details. 
     - If the login request contains a Privacy Pass token, the token is validated before accepting the request.
     - If not, it's the request above.
