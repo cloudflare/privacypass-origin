@@ -34,7 +34,7 @@
 		]
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20230904.0",
+		"@cloudflare/workers-types": "^5.20261023.1",
 		"dotenv": "16.3.1",
 		"esbuild": "0.28.1",
 		"eslint": "8.50.0",
